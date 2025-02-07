@@ -7,4 +7,6 @@ void main(List<String> arguments) {
   print(stringCalculator.add("1,2"));
   print(stringCalculator.add("1,2,21,3"));
   print(stringCalculator.add("1,2\n3,10"));
+  print(stringCalculator.add("//;1;2\n2;10"));
+  print(stringCalculator.add("//;\n1;2\n2;1"));
 }

@@ -21,4 +21,8 @@ void main() {
       () {
     expect(stringCalculator.add("1,2\n2,10"), 15);
   });
+  test('When other delimiters used return sum of all numbers', () {
+    expect(stringCalculator.add("//;1;2\n2;10"), 15);
+    expect(stringCalculator.add("//;\n1;2\n2;1"), 6);
+  });
 }
