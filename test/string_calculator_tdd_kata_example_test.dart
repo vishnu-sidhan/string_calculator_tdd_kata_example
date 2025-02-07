@@ -21,10 +21,12 @@ void main() {
       () {
     expect(stringCalculator.add("1,2\n2,10"), 15);
   });
-  test('When other delimiters of any length used', () {
-    expect(stringCalculator.add("//;1;2\n2;10"), 15);
+  test('When other delimiters are used', () {
     expect(stringCalculator.add("//;\n1;2\n2;1"), 6);
+  });
+  test('When delimiters of any length used', () {
     expect(stringCalculator.add("//@@\n1\n2@@1"), 4);
+    expect(stringCalculator.add("//@@##\n1##2@@1"), 4);
   });
   test('When negative values present', () {
     try {
