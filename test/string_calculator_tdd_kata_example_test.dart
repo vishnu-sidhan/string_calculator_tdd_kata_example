@@ -16,4 +16,9 @@ void main() {
   test('When multiple numbers present return sum of all numbers', () {
     expect(stringCalculator.add("1,5,10"), 16);
   });
+  test(
+      'When newline character present remove character and return sum of all numbers',
+      () {
+    expect(stringCalculator.add("1,2\n2,10"), 15);
+  });
 }
