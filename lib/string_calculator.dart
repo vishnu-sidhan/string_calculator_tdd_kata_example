@@ -19,7 +19,7 @@ class StringCalculator {
           negativeValues.add(num);
           continue;
         }
-        total += num;
+        if (num < 1000) total += num;
       }
       if (negativeValues.isNotEmpty) {
         return throw "Negatives not allowed - ${negativeValues.join(",")}";

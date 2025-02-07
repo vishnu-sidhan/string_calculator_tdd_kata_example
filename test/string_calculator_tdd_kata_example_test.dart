@@ -25,7 +25,7 @@ void main() {
     expect(stringCalculator.add("//;1;2\n2;10"), 15);
     expect(stringCalculator.add("//;\n1;2\n2;1"), 6);
   });
-  test('When negative values', () {
+  test('When negative values present', () {
     try {
       stringCalculator.add("-1,2");
     } catch (e) {
@@ -36,5 +36,8 @@ void main() {
     } catch (e) {
       expect(e, "Negatives not allowed - -1,-4");
     }
+  });
+  test('When a number is greater than 1000', () {
+    expect(stringCalculator.add("2,1000"), 2);
   });
 }
