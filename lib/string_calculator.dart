@@ -3,8 +3,17 @@ class StringCalculator {
     if (numbers.isEmpty) return 0;
     String delimiter = ",";
     if (numbers.startsWith("//")) {
-      delimiter = numbers[2];
-      numbers = numbers.substring(3);
+      String temp = numbers[2];
+      int count = 1;
+      for (int i = 3; i < numbers.length; i++) {
+        if (numbers[i] == temp) {
+          count++;
+        } else {
+          numbers = numbers.substring(i);
+          break;
+        }
+      }
+      delimiter = List.generate(count, (i) => temp).join();
     }
     if (numbers.contains('\n')) {
       numbers = numbers.split('\n').join(delimiter);
