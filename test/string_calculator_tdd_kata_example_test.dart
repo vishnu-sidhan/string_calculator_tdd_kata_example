@@ -25,4 +25,16 @@ void main() {
     expect(stringCalculator.add("//;1;2\n2;10"), 15);
     expect(stringCalculator.add("//;\n1;2\n2;1"), 6);
   });
+  test('When negative values', () {
+    try {
+      stringCalculator.add("-1,2");
+    } catch (e) {
+      expect(e, "Negatives not allowed - -1");
+    }
+    try {
+      stringCalculator.add("-1,2,-4");
+    } catch (e) {
+      expect(e, "Negatives not allowed - -1,-4");
+    }
+  });
 }

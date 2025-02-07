@@ -12,9 +12,17 @@ class StringCalculator {
     if (numbers.contains(delimiter)) {
       List<String> list = numbers.split(delimiter);
       int total = 0;
+      List<int> negativeValues = [];
       for (String val in list) {
         int num = stringToInt(val);
+        if (num < 0) {
+          negativeValues.add(num);
+          continue;
+        }
         total += num;
+      }
+      if (negativeValues.isNotEmpty) {
+        return throw "Negatives not allowed - ${negativeValues.join(",")}";
       }
       return total;
     }
