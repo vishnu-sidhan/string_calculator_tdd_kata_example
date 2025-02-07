@@ -1,5 +1,7 @@
-import 'package:string_calculator_tdd_kata_example/string_calculator_tdd_kata_example.dart' as string_calculator_tdd_kata_example;
+import 'package:string_calculator_tdd_kata_example/string_calculator.dart';
 
 void main(List<String> arguments) {
-  print('Hello world: ${string_calculator_tdd_kata_example.calculate()}!');
+  StringCalculator stringCalculator = StringCalculator();
+  print(stringCalculator.add(""));
+  print(stringCalculator.add("1"));
 }
