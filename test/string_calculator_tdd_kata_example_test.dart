@@ -13,7 +13,7 @@ void main() {
   test('When only number present in String return number', () {
     expect(stringCalculator.add("1"), 1);
   });
-  test('When 2 numbers present return sum of all numbers', () {
-    expect(stringCalculator.add("1,5"), 6);
+  test('When multiple numbers present return sum of all numbers', () {
+    expect(stringCalculator.add("1,5,10"), 16);
   });
 }

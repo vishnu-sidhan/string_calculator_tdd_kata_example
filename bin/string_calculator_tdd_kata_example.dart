@@ -5,4 +5,5 @@ void main(List<String> arguments) {
   print(stringCalculator.add(""));
   print(stringCalculator.add("1"));
   print(stringCalculator.add("1,2"));
+  print(stringCalculator.add("1,2,21,3"));
 }
