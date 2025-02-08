@@ -22,18 +22,15 @@ class StringCalculator {
       }
     }
     // Converting the string numbers to list of integers.
-    List<int> values =
-        numbers.split(commonDelimiter).map((e) => stringToInt(e)).toList();
-    int total = 0;
+    Iterable<int> values =
+        numbers.split(commonDelimiter).map((e) => stringToInt(e));
     List<int> negativeValues = [];
     // Adding integers values according to conditions.
-    for (int val in values) {
-      if (val < 0) {
-        negativeValues.add(val);
-        continue;
-      }
-      if (val < 1000) total += val;
-    }
+    int total = values.fold(0, (prev, val) {
+      if (val > 0 && val < 1000) return prev + val;
+      if (val < 0) negativeValues.add(val);
+      return prev;
+    });
     // Throwing error if negatives values present in string.
     if (negativeValues.isNotEmpty) {
       return throw "Negatives not allowed - ${negativeValues.join(",")}";
